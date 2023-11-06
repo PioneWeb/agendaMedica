@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,11 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
 
         /** @var Team $team */
         $team = Team::factory()->create();
-        \App\Models\User::factory()->create([
+        User::factory()->create([
             'name' => 'Luca',
             'email' => 'luca@s-mart.biz',
             'password' => Hash::make('ALF1123pmp!'),
