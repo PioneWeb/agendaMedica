@@ -18,6 +18,14 @@ const form = useForm({
     name: props.user.name,
     email: props.user.email,
     photo: null,
+    nome: props.user.nome,
+    cognome: props.user.cognome,
+    indirizzo: props.user.indirizzo,
+    telefono: props.user.telefono,
+    cellulare: props.user.cellulare,
+    ragione_sociale: props.user.ragione_sociale,
+    p_iva: props.user.p_iva,
+    c_fiscale: props.user.c_fiscale,
 });
 
 const verificationLinkSent = ref(null);
@@ -129,7 +137,7 @@ const clearPhotoFileInput = () => {
             </div>
 
             <!-- Name -->
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-3">
                 <InputLabel for="name" value="Name" />
                 <TextInput
                     id="name"
@@ -143,7 +151,7 @@ const clearPhotoFileInput = () => {
             </div>
 
             <!-- Email -->
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-3">
                 <InputLabel for="email" value="Email" />
                 <TextInput
                     id="email"
@@ -154,6 +162,7 @@ const clearPhotoFileInput = () => {
                     autocomplete="username"
                 />
                 <InputError :message="form.errors.email" class="mt-2" />
+
 
                 <div v-if="$page.props.jetstream.hasEmailVerification && user.email_verified_at === null">
                     <p class="text-sm mt-2 dark:text-white">
@@ -174,6 +183,94 @@ const clearPhotoFileInput = () => {
                         A new verification link has been sent to your email address.
                     </div>
                 </div>
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+                <InputLabel for="nome" value="Nome" />
+                <TextInput
+                    id="nome"
+                    v-model="form.nome"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <InputError :message="form.errors.nome" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+                <InputLabel for="cognome" value="Cognome" />
+                <TextInput
+                    id="cognome"
+                    v-model="form.cognome"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <InputError :message="form.errors.cognome" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+                <InputLabel for="indirizzo" value="Indirizzo" />
+                <TextInput
+                    id="indirizzo"
+                    v-model="form.indirizzo"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <InputError :message="form.errors.indirizzo" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+                <InputLabel for="telefono" value="Telefono" />
+                <TextInput
+                    id="telefono"
+                    v-model="form.telefono"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <InputError :message="form.errors.telefono" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+                <InputLabel for="cellulare" value="Cellulare" />
+                <TextInput
+                    id="cellulare"
+                    v-model="form.cellulare"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <InputError :message="form.errors.cellulare" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+                <InputLabel for="ragione_sociale" value="Rag. sociale" />
+                <TextInput
+                    id="ragione_sociale"
+                    v-model="form.ragione_sociale"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <InputError :message="form.errors.ragione_sociale" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+                <InputLabel for="p_iva" value="p. iva" />
+                <TextInput
+                    id="p_iva"
+                    v-model="form.p_iva"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <InputError :message="form.errors.p_iva" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+                <InputLabel for="c_fiscale" value="c. fiscale" />
+                <TextInput
+                    id="c_fiscale"
+                    v-model="form.c_fiscale"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <InputError :message="form.errors.c_fiscale" class="mt-2" />
             </div>
         </template>
 

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'luca@s-mart.biz',
             'password' => Hash::make('ALF1123pmp!'),
             'current_team_id' => $team->id,
+            'codice' => 'C7B9CDE78B71',
         ]);
     }
 }
